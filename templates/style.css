@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+body {
+    background-color: #082032;
+}
+
+.box {
+    background-color: #334756;
+    color:white;
+    display: block;
+    text-align: center;
+    padding: 16px;
+}
+
+hr {
+    border: 1px solid #082032;
+    margin-bottom: 25px;
+  }
