@@ -11,6 +11,14 @@ cur.execute(''' CREATE TABLE users
         NAME     VARCHAR, 
         EMAIL    VARCHAR, 
         PASSWORD VARCHAR);''')
+
+cur.execute(''' CREATE TABLE movies
+        (ID SERIAL PRIMARY KEY,
+        NAME     VARCHAR, 
+        DIRECTOR    VARCHAR, 
+        GENRE VARCHAR
+        );
+''')
 print("Table created successfully!")
 
 con.commit()

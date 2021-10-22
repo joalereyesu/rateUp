@@ -15,7 +15,7 @@ environment = Environment(loader = templates)
 
 @app.route("/", methods = ["GET", "POST"])
 def home():
-    return render_template("HomePage.html")
+    return render_template('HomePage.html')
 
 @app.route("/signUp", methods = ["GET", "POST"])
 def signUp():
@@ -47,9 +47,6 @@ def signIn():
                 print('error')
     return render_template("SignIn.html")
     
-@app.errorhandler(404)
-def page_not_found(error):
-    return render_template('error_found.html'), 404
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True)
