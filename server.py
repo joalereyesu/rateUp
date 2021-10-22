@@ -17,8 +17,7 @@ cur.execute(''' CREATE TABLE movies
         NAME     VARCHAR, 
         DIRECTOR    VARCHAR, 
         GENRE VARCHAR
-        );
-''')
+        );''')
 print("Table created successfully!")
 
 con.commit()
