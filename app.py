@@ -46,7 +46,32 @@ def signIn():
             else:
                 print('error')
     return render_template("SignIn.html")
-    
+
+@app.route("/deleteUser/<name>", methods = ["GET", "POST"])
+def deleteUser(name):
+    cur = con.cursor()
+    cur.execute("select id, name from users")
+    users = cur.fetchall()
+    for user in users:
+            if user[1] == name:
+                user_id = user[0]
+                cur.execute("DELETE from users where id = %s;", (user_id,))
+                con.commit()
+                cur.close()
+                print("Success!")
+
+@app.route("/deleteMovie/<name>", methods = ["GET", "POST"])
+def deleteMovie(name):
+    cur = con.cursor()
+    cur.execute("select id, name from movies")
+    movies = cur.fetchall()
+    for movie in movies:
+            if movie[1] == name:
+                movie_id = movie[0]
+                cur.execute("DELETE from movies where id = %s;", (movie_id,))
+                con.commit()
+                cur.close()
+                print("Success!")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",debug=True)
