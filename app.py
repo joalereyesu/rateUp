@@ -1,3 +1,4 @@
+from os import error
 from flask import Flask, render_template, request, url_for, redirect
 from flask.wrappers import Request
 from jinja2 import Template, FileSystemLoader, Environment
@@ -15,7 +16,7 @@ environment = Environment(loader = templates)
 
 @app.route("/", methods = ["GET", "POST"])
 def home():
-    return render_template('HomePage.html')
+    return render_template('MovieHP.html')
 
 @app.route("/signUp", methods = ["GET", "POST"])
 def signUp():
@@ -42,12 +43,12 @@ def signIn():
         for user in users:
             if user[1] == email and user[2] == password:
                 cur.close()
-                return redirect("/")
+                return render_template(f"/homepage/{user[0]}")
             else:
                 print('error')
     return render_template("SignIn.html")
 
-@app.route("/deleteUser/<name>", methods = ["GET", "POST"])
+@app.route("/deleteUser/<name>", methods = ["DELETE"])
 def deleteUser(name):
     cur = con.cursor()
     cur.execute("select id, name from users")
@@ -60,7 +61,7 @@ def deleteUser(name):
                 cur.close()
                 print("Success!")
 
-@app.route("/deleteMovie/<name>", methods = ["GET", "POST"])
+@app.route("/deleteMovie/<name>", methods = ["DELETE"])
 def deleteMovie(name):
     cur = con.cursor()
     cur.execute("select id, name from movies")
@@ -73,5 +74,10 @@ def deleteMovie(name):
                 cur.close()
                 print("Success!")
 
+@app.route("/homepage/<username>", methods = ["GET"])
+def homePage(username):
+    pass
+
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",debug=True)
+    app.run(host="127.0.0.1",debug=True)
