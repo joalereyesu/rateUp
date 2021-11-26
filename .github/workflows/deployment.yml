@@ -47,6 +47,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     # Run our unit tests
-    steps: 
+    steps:
+    - name: Run Unit Tests
     - run: | 
           python test_post.py
