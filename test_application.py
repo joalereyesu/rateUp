@@ -9,5 +9,5 @@ with app.test_client() as c:
     })
     json_data = rv.get_json()
     assert rv.generate_response( json_data['resp'])
-    assert response.status_code == 200
+    assert rv.status_code == 200
     
