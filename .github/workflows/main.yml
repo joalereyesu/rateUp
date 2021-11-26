@@ -6,7 +6,18 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:10.10
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: papalina
+          POSTGRES_DB: rateup
+        ports:
+          - 5432/5432
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
@@ -24,6 +35,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install flask
           pip install psycopg2
+          
+      - name: Setup Database
+        env:
+          RAILS_ENV: test
+          POSTGRES_HOST: localhost
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: papalina
+          POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
+        run: |
+          cp config/database.yml.ci config/database.yml
+          bundle exec rails db:create
+          bundle exec rails db:schema:load
 
       # Run our unit tests
       - name: Run unit tests
