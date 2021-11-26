@@ -42,10 +42,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install flask
           pip install psycopg2
+  
   test:
     needs: build
     runs-on: ubuntu-latest
     # Run our unit tests
     steps: 
-      - run: | 
-            python test_post.py
+    - run: | 
+          python test_post.py
