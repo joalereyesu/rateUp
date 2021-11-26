@@ -115,12 +115,6 @@ def editProfile (username, user, email, password):
     con.commit()
     return redirect(url_for("signIn"))
 
-@app.route("/insert", methods = ["GET", "POST"])
-def insert():
-    name = "The Eternals"
-    director = ""
-    cur = con.cursor()
-    cur.execute("INSERT INTO popular (name, director, genre) VALUES(%s, %s, %s);", (username, email, password))
 
 @app.errorhandler(404)
 def page_not_found(error):
