@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Python
+      uses: actions/setup-python@v1.2.0
+
+    - name: Install Python packages
+      run: |
+        ls -al
+        pip install flask
+        pip install psycopg2
+    - name: Run flake8
+      run: flake8 src/
+
+    - name: Run tests
+      run: |
+        export FLASK_APP="src/app.py"
+        export POSTGRES_URL="127.0.0.1:54320"
+        export POSTGRES_DB="rateup"
+        export POSTGRES_USER="postgres"
+        export POSTGRES_PASSWORD="papalina"
+        py.test -vv
