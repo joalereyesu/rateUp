@@ -46,6 +46,5 @@ jobs:
 
       # Run our unit tests
       - name: Run unit tests
-        run: |
-          python test_application.py 
+        run: | 
           python test_post.py
