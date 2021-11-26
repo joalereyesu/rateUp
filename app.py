@@ -14,39 +14,42 @@ print("Database opened successfully")
 templates = FileSystemLoader('templates')
 environment = Environment(loader = templates)
 
-@app.route("/", methods = ["GET", "POST"])
-def home():
-    return render_template('MovieHP.html')
 
 @app.route("/signUp", methods = ["GET", "POST"])
 def signUp():
-    name = request.args.get("name")
+    username = request.args.get("name")
     email = request.args.get("email")
     password = request.args.get("password")
-    if (name): 
+    if (username): 
         cur = con.cursor()
-        cur.execute("INSERT INTO users (name, email, password) VALUES(%s, %s, %s);", (name, email, password))
+        cur.execute("INSERT INTO users (name, email, password) VALUES(%s, %s, %s);", (username, email, password))
         con.commit()
         cur.close()
-        return render_template("HomePage.html", name = name)
+        return redirect(url_for('home', username=username))
     return render_template("SignUp.html")
 
 @app.route("/signIn", methods = ["GET", "POST"])
 def signIn():
-    email = request.args.get("email")
+    username = request.args.get("username")
     password = request.args.get("password")
-    if (email):
+    if (username):
         cur = con.cursor()
         cur.execute("select name, email, password from users")
         users = cur.fetchall()
         print(users)
+        print(users[0])
         for user in users:
-            if user[1] == email and user[2] == password:
+            print(user[0])
+            if user[0] == username and user[2] == password:
                 cur.close()
-                return render_template(f"/homepage/{user[0]}")
+                return redirect(url_for('home', username=user[0]))
             else:
                 print('error')
     return render_template("SignIn.html")
+
+@app.route("/homepage/<username>", methods = ["GET", "POST"])
+def home(username):
+    return render_template('MovieHP.html', username = username)
 
 @app.route("/deleteUser/<name>", methods = ["DELETE"])
 def deleteUser(name):
@@ -74,17 +77,17 @@ def deleteMovie(name):
                 cur.close()
                 print("Success!")
 
-@app.route("/homepage/<username>", methods = ["GET"])
-def homePage(username):
-    pass
+@app.route("/movies/<username>", methods = ["GET"])
+def movies(username):
+    return render_template("Movies.html", username=username)
 
-@app.route("/movies", methods = ["GET"])
-def movies():
-    return render_template("Movies.html")
+@app.route("/tvshows/<username>", methods = ["GET"])
+def tvshows(username):
+    return render_template("tvShows.html", username = username)
 
-@app.route("/tvshows", methods = ["GET"])
-def tvshows():
-    return render_template("tvShows.html")
+@app.route("/profile/<username>", methods = ["GET", "POST"])
+def profile(username):
+    return render_template("profile.html", username = username)
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1",debug=True)
