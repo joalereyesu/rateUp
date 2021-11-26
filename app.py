@@ -15,7 +15,7 @@ templates = FileSystemLoader('templates')
 environment = Environment(loader = templates)
 
 
-@app.route("/", methods = ["GET", "POST"])
+@app.route("/signUp", methods = ["GET", "POST"])
 def signUp():
     username = request.args.get("name")
     email = request.args.get("email")
