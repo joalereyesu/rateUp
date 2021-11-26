@@ -10,7 +10,8 @@ cur.execute(''' CREATE TABLE users
         (ID SERIAL PRIMARY KEY,
         NAME     VARCHAR, 
         EMAIL    VARCHAR, 
-        PASSWORD VARCHAR);''')
+        PASSWORD VARCHAR, 
+        RATING int);''')
 
 cur.execute(''' CREATE TABLE movies
         (ID SERIAL PRIMARY KEY,
@@ -18,6 +19,21 @@ cur.execute(''' CREATE TABLE movies
         DIRECTOR    VARCHAR, 
         GENRE VARCHAR
         );''')
+
+cur.execute(''' CREATE TABLE tvshows
+        (ID SERIAL PRIMARY KEY,
+        NAME     VARCHAR, 
+        DIRECTOR    VARCHAR, 
+        GENRE VARCHAR
+        );''')
+
+cur.execute(''' CREATE TABLE popular
+        (ID SERIAL PRIMARY KEY,
+        NAME     VARCHAR, 
+        DIRECTOR    VARCHAR, 
+        GENRE VARCHAR
+        );''')
+
 print("Table created successfully!")
 
 con.commit()

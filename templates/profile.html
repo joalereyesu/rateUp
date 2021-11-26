@@ -227,15 +227,15 @@
                         <hr>
                         <form>
                             <label class="password" for = "username">Username</label>
-                            <input type = "text" placeholder="New username" name = "username" required>
+                            <input type = "text" placeholder="New username" name = "username">
 
                             <label class="email" for = "email">Email</label>
-                            <input  type = "text" placeholder="New email" name = "email" required>
+                            <input  type = "text" placeholder="New email" name = "email">
 
                             <label class="password" for = "password">Password</label>
-                            <input type = "password" placeholder="New password" name = "password" required>
-                            <button class="boton1">Update profile</button>
-                            <button class="boton2">Delete Account</button>
+                            <input type = "password" placeholder="New password" name = "password">
+                            <button type="submit" class="boton1">Update profile</button>
+                            <a href="/deleteUser/{{username}}"><button type = "button" class="boton2">Delete Account</button></a>
                         </form>
                     </div>
                 </div>
