@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+         @import url('https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap');
+
+         body {
+            margin-top: 200px;
+            background-color: #082032;
+        }
+        li, a, button, h1 {
+            font-family: "Roboto";
+            font-weight: 500;
+            font-size: 16px;
+            color: #edf0f1;
+            text-decoration: none;
+        }
+
+        button {
+            margin-left: 20px;
+            padding: 9px 25px;
+            background-color:  #F0A500;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            color: rgb(247, 247, 247);
+            margin: 0 0 20px;
+        }
+
+        button:hover {
+            background-color:  rgb(247, 247, 247);
+            color: #F0A500;
+        }
+
+        .card {
+            box-shadow: 0 0 30px rgb(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 0px 0px;
+            margin-bottom: 30px;
+            width: 50%;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 50%;
+            background-color: #334756;
+        }
+
+        .main-text {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .main-text h2{
+            font-family: "Roboto";
+            text-transform: uppercase;
+            font-weight: 900;
+            font-size: 20px;
+            margin: 0 0 20px;
+            color: #edf0f1;
+        }
+
+        .main-text p {
+            font-family: "Roboto";
+            font-style: normal;
+            font-size: 16px;
+            margin: 0 0 20px;
+            color: #edf0f1;
+        }
+        .sub {
+            font-family: "Roboto";
+            font-weight: 500;
+            font-size: 28px;
+            color: #edf0f1;
+            text-decoration: none;
+            padding-left: 14px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+    </style>
+    <body>
+        <div class="card">
+            <div class="main-text">
+                <h1 class="sub">Error 401</h1>
+                <hr>
+                <p>The username or password are incorrect. Please try again.</p>
+                <a href="/signIn"><button>Go back</button></a>
+            </div>
+        </div>
+    </body>
+</html>
