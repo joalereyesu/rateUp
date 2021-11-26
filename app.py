@@ -78,6 +78,10 @@ def deleteMovie(name):
 def homePage(username):
     pass
 
+@app.route("/movies", methods = ["GET"])
+def movies():
+    return render_template("Movies.html")
+
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1",debug=True)
