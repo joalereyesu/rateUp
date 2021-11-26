@@ -47,4 +47,4 @@ jobs:
       # Run our unit tests
       - name: Run unit tests
         run: | 
-          python test_post.py
+          python rateUp/test_application.py
