@@ -1,6 +1,6 @@
 import psycopg2
 
-con = psycopg2.connect(database="rateup", user="postgres", password="", host="127.0.0.1", port="5432")
+con = psycopg2.connect(database="rateup", user="postgres", password="", host="*", port="5432")
 print("Database opened successfully")
 
 cur = con.cursor()
