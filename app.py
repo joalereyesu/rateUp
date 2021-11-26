@@ -82,6 +82,9 @@ def homePage(username):
 def movies():
     return render_template("Movies.html")
 
+@app.route("/tvshows", methods = ["GET"])
+def tvshows():
+    return render_template("tvShows.html")
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1",debug=True)
