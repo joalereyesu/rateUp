@@ -10,7 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     services:
       postgres:
         image: postgres
@@ -46,5 +45,7 @@ jobs:
   test:
     needs: build
     runs-on: ubuntu-latest
-    steps:
-      - run: python test_post.py
+    # Run our unit tests
+    steps: 
+    - run: | 
+        python test_post.py
