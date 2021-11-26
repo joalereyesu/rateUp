@@ -47,5 +47,5 @@ jobs:
     runs-on: ubuntu-latest
     # Run our unit tests
     steps: 
-    - run: | 
-        python ./test_post.py
+      - run: | 
+            python test_post.py
