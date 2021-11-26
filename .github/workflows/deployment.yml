@@ -48,4 +48,4 @@ jobs:
     # Run our unit tests
     steps: 
     - run: | 
-        python test_post.py
+        python ./test_post.py
