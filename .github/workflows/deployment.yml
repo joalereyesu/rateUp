@@ -50,4 +50,4 @@ jobs:
     steps:  
     - name: Run Unit Tests
       run: | 
-           python joalereyesu/rateUp/test_application.py
+           python oalereyesu/rateUp/blob/main/test_application.py
