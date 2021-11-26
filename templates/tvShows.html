@@ -143,6 +143,49 @@
                 margin: 0 0 20px;
                 color: #edf0f1;
             }
+
+
+
+
+            .center a {
+                padding:10px 20px;
+                color:#111;
+                font-size:15px;
+                font-weight:600;
+                text-decoration:none;
+              }
+              #popup {
+                position:fixed;
+                top:0px;
+                left:0px;
+                width:100vw;
+                height:100vh;
+                background:rgba(0,0,0,0.75);
+                display:none;
+              }
+              #popup .popup-content {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                width:400px;
+                padding:10px 20px;
+                background:#F0A500;
+              }
+              #popup a.close-popup {
+                position:absolute;
+                top:20px;
+                right:20px;
+                font-size:20px;
+                font-weight:600;
+                text-decoration:none;
+              }
+              #popup:target {
+                display:block;
+              }
+
+
+
         </style>
     </head>
     <body>
@@ -167,7 +210,7 @@
                     <div class = img1><img src="/static/hawkeye.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Hawkeye</h2>
-                        <p>Description here</p>
+                        <p>Director: Rhys Thomas</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -178,7 +221,7 @@
                     <div class = img1><img src="/static/wanda_vision.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Wanda Vision</h2>
-                        <p>Description here</p>
+                        <p>Director: Matt Shakman</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -188,8 +231,8 @@
                 <div class="card">
                     <div class = img1><img src="/static/sex_ed.jpeg" alt=""></div>
                     <div class="main-text">
-                        <h2>Sexual Education</h2>
-                        <p>Description</p>
+                        <h2>Sex Education</h2>
+                        <p>Director: Jon Jennings</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -200,7 +243,7 @@
                     <div class = img1><img src="/static/loki.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Loki</h2>
-                        <p>Description here</p>
+                        <p>Director: Kate Herron</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -211,7 +254,7 @@
                     <div class = img1><img src="/static/gossip-girl.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Gossip Girl</h2>
-                        <p>Description here</p>
+                        <p>Director: Leslie Morgenstein</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -222,7 +265,7 @@
                     <div class = img1><img src="/static/b99.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Brooklyn Nine-Nine</h2>
-                        <p>Description here</p>
+                        <p>Director: Dan Goor</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -232,7 +275,7 @@
                     <div class = img1><img src="/static/wheel_time.webp" alt=""></div>
                     <div class="main-text">
                         <h2>The Wheel of Time</h2>
-                        <p>Description here</p>
+                        <p>Director: Marcus Rutherford</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -242,8 +285,17 @@
                     <div class = img1><img src="/static/euphoria.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Euphoria</h2>
-                        <p>Description here</p>
-                        <button>Rate now</button>
+                        <p>Director: Augustine Frizzell</p>
+                        <div class="center">
+                            <a href="#popup"><button>Rate now</button></a>
+                          </div>
+                          <div id="popup">
+                            <div class="popup-content">
+                              <h1 style="color:#eee; font-size:x-large">Euphoria</h1>
+                              <p style="color:#eee">Euphoria is an American teen drama television series created and written by Sam Levinson for HBO. It is based on the Israeli television miniseries of the same name created by Ron Leshem and Daphna Levin. It follows a group of high school students through their experiences of sex, drugs, friendships, love, identity, and trauma.</p>
+                              <a style=color:#eee href="#" class="close-popup">×</a>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>

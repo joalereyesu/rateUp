@@ -5,3 +5,4 @@ with app.test_client() as c:
         'name': 'esteban', 'email': 'data', 'password': 'papalina'
     })
     assert rv.status_code == 200
+    

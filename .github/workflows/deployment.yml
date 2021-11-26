@@ -10,7 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     services:
       postgres:
         image: postgres
@@ -43,8 +42,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install flask
           pip install psycopg2
+  
   test:
     needs: build
     runs-on: ubuntu-latest
-    steps:
-      - run: python test_post.py
+    # Run our unit tests
+    steps:  
+    - name: Run Unit Tests
+      run: | 
+           python joalereyesu/rateUp/blob/main/test_application.py

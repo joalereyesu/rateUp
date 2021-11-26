@@ -189,6 +189,44 @@
             .dropdown a:hover {background-color: #ddd;}
             
             .show {display: block;} 
+
+
+            .center a {
+                padding:10px 20px;
+                color:#111;
+                font-size:15px;
+                font-weight:600;
+                text-decoration:none;
+              }
+              #popup {
+                position:fixed;
+                top:0px;
+                left:0px;
+                width:100vw;
+                height:100vh;
+                background:rgba(0,0,0,0.75);
+                display:none;
+              }
+              #popup .popup-content {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                width:400px;
+                padding:10px 20px;
+                background:#F0A500;
+              }
+              #popup a.close-popup {
+                position:absolute;
+                top:20px;
+                right:20px;
+                font-size:20px;
+                font-weight:600;
+                text-decoration:none;
+              }
+              #popup:target {
+                display:block;
+              }
      
 
 
@@ -320,7 +358,16 @@
                         <div class="main-text">
                             <h2>Free Guy</h2>
                             <p>Description here</p>
-                            <button>Rate now</button>
+                            <div class="center">
+                                <a href="#popup"><button>Rate now</button></a>
+                              </div>
+                              <div id="popup">
+                                <div class="popup-content">
+                                  <h1 style="color:#eee; font-size:x-large">Free Guy</h1>
+                                  <p style="color:#eee">Ryan Reynolds plays Guy, an NPC in an open-world video game who works at a bank and has been sentenced to living the same daily routine. A chance encounter with a mysterious woman gives him gives him an epiphany, and inspires Guy to become the hero of his own life story.</p>
+                                  <a style=color:#eee href="#" class="close-popup">×</a>
+                                </div>
+                              </div>
                         </div>
                     </div>
                 </div>
