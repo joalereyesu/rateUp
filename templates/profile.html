@@ -8,7 +8,7 @@
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
             @import url('https://fonts.googleapis.com/css2?family=Rubik:ital@1&display=swap');
-
+            
             .navbar {
             overflow: hidden;
             background-color: #F0A500;
@@ -24,8 +24,19 @@
             }
 
             body {
-                margin-top: 130px;
+                margin-top: 200px;
                 background-color: #082032;
+            }
+
+            hr {
+                border: 1px solid #F0A500;
+                margin-bottom: 25px;
+            }
+
+            form {
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             li, a, button, h1 {
@@ -43,7 +54,7 @@
                 color: #edf0f1;
                 text-decoration: none;
                 padding-left: 14px;
-                padding-top: 25px;
+                text-align: center;
                 padding-bottom: 10px;
             }
 
@@ -81,6 +92,7 @@
             color: black;
             }
 
+
             button {
             margin-left: 20px;
             padding: 9px 25px;
@@ -112,7 +124,17 @@
                 border-radius: 15px;
                 padding: 0px 0px;
                 margin-bottom: 30px;
+                width: 50%;
+                top:0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 50%;
+                background-color: #334756;
             }
+            
+
 
             .img1 img{
                 border-top-right-radius: 15px;
@@ -123,7 +145,7 @@
             }
 
             .main-text {
-                padding: 30px 0;
+                padding: 40px 0;
                 text-align: center;
             }
 
@@ -143,113 +165,54 @@
                 margin: 0 0 20px;
                 color: #edf0f1;
             }
+            input[type=text], input[type=password] {
+                width: 100%;
+                padding: 15px;
+                margin:10px 0;
+                border: 0;
+                box-shadow: 0 0 30px rgba(65, 64, 64, 0.5);
+                border-radius: 15px;
+                display: block;
+                line-height: 14px;
+            }
+
+            input[type=text]:focus, input[type=password]:focus {
+                background-color: #ddd;
+                outline: none;
+            }
         </style>
     </head>
-    <body>
-        <div class = "navbar">
-            <header>  
-                <h1 class="logo">RateUp</h1>
-                <nav>
-                    <ul class = "nav_links">
-                        <li><a href="/">Home</a></li>
-                        <li><a class="nav_links active" href="/movies/{{username}}">Movies</a></li>
-                        <li><a href="/tvshows/{{username}}">TV Shows</a></li>
-                        <li><a href="/watchlist/{{username}}">Watchlist</a></li>
-                        <li><a href="/profile/{{username}}">{{username}}</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
-        <h1 class="sub">New movies</h1>
-        <div class="row row-cols-1 row-cols-md-3 g-4">    
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class = img1><img src="/static/eternals.jpeg" alt=""></div>
-                    <div class="main-text">
-                        <h2>The Eternals</h2>
-                        <p>Description here</p>
-                        <button>Rate now</button>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-3">
-                <div class="card">
-                    <div class = img1><img src="/static/dunedesk.jpeg" alt=""></div>
-                    <div class="main-text">
-                        <h2>Dune</h2>
-                        <p>Description here</p>
-                        <button>Rate now</button>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="col-md-3">
-                <div class="card">
-                    <div class = img1><img src="/static/shangchi.jpeg" alt=""></div>
-                    <div class="main-text">
-                        <h2>Shang-Chi</h2>
-                        <p>Description</p>
-                        <button>Rate now</button>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-sm-3">
+        <body>
+            <div class = "navbar">
+                <header>  
+                    <h1 class="logo">RateUp</h1>
+                    <nav>
+                        <ul class = "nav_links">
+                            <li><a href="/homepage/{{username}}">Home</a></li>
+                            <li><a href="/movies/{{username}}">Movies</a></li>
+                            <li><a href="/tvshows/{{username}}">TV Shows</a></li>
+                            <li><a href="/watchlist/{{username}}">Watchlist</a></li>
+                            <li><a class="nav_links active" href="/profile/{{username}}">{{username}}</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div> 
                 <div class="card">
-                    <div class = img1><img src="/static/house_gucci.jpeg" alt=""></div>
                     <div class="main-text">
-                        <h2>House of Gucci</h2>
-                        <p>Description here</p>
-                        <button>Rate now</button>
-                    </div>
-                </div>
-            </div>
-     
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class = img1><img src="/static/encanto.jpeg" alt=""></div>
-                    <div class="main-text">
-                        <h2>Encanto</h2>
-                        <p>Description here</p>
-                        <button>Rate now</button>
-                    </div>
-                </div>
-            </div>
-               
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class = img1><img src="/static/venom.jpeg" alt=""></div>
-                    <div class="main-text">
-                        <h2>Venom</h2>
-                        <p>Description here</p>
-                        <button>Rate now</button>
-                    </div>
-                </div>
-            </div>
+                        <h1 class="sub">Edit your profile</h1>
+                        <hr>
+                        <form>
+                            <label for = "username">Username</label>
+                            <input type = "text" placeholder="New username" name = "username" required>
 
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class = img1><img src="/static/007.jpeg" alt=""></div>
-                    <div class="main-text">
-                        <h2>No Time to Die</h2>
-                        <p>Description here</p>
-                        <button>Rate now</button>
+                            <label for = "email">Email</label>
+                            <input type = "text" placeholder="New email" name = "email" required>
+
+                            <label for = "password">Password</label>
+                            <input type = "password" placeholder="New password" name = "password" required>
+                            <button>Update profile</button>
+                        </form>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class = img1><img src="/static/free_guy.jpeg" alt=""></div>
-                    <div class="main-text">
-                        <h2>Free Guy</h2>
-                        <p>Description here</p>
-                        <button>Rate now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-
-</html>
+        </body>
