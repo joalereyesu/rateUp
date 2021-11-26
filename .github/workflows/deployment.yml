@@ -48,6 +48,14 @@ jobs:
     runs-on: ubuntu-latest
     # Run our unit tests
     steps:
+    - uses: actions/checkout@v2
+
+      # Set up Python 3.6 environment
+    - name: Set up Python 3.6
+      uses: actions/setup-python@v1
+      with:
+        python-version: "3.6"
+        
     - name: Run Unit Tests
       run: | 
-           test_post.py
+           python test_post.py
