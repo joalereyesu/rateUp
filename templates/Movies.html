@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css only modal.css">
         <!---<link rel="stylesheet" href="/static/styles.css">--->
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
@@ -143,6 +144,55 @@
                 margin: 0 0 20px;
                 color: #edf0f1;
             }
+
+
+
+
+
+          
+           
+              .center a {
+                padding:10px 20px;
+                color:#111;
+                font-size:15px;
+                font-weight:600;
+                text-decoration:none;
+              }
+              #popup {
+                position:fixed;
+                top:0px;
+                left:0px;
+                width:100vw;
+                height:100vh;
+                background:rgba(0,0,0,0.75);
+                display:none;
+              }
+              #popup .popup-content {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                width:400px;
+                padding:10px 20px;
+                background:#F0A500;
+              }
+              #popup a.close-popup {
+                position:absolute;
+                top:20px;
+                right:20px;
+                font-size:20px;
+                font-weight:600;
+                text-decoration:none;
+              }
+              #popup:target {
+                display:block;
+              }
+
+
+
+
+
+
         </style>
     </head>
     <body>
@@ -167,18 +217,20 @@
                     <div class = img1><img src="/static/eternals.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>The Eternals</h2>
-                        <p>Description here</p>
+                        <p>Director: Chloé Zhao</p>
                         <button>Rate now</button>
                     </div>
                 </div>
             </div>
+
+
         
             <div class="col-md-3">
                 <div class="card">
                     <div class = img1><img src="/static/dunedesk.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Dune</h2>
-                        <p>Description here</p>
+                        <p>Director: Denis Villeneuve</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -189,7 +241,7 @@
                     <div class = img1><img src="/static/shangchi.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Shang-Chi</h2>
-                        <p>Description</p>
+                        <p>Director: Destin Daniel Cretton</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -200,7 +252,7 @@
                     <div class = img1><img src="/static/house_gucci.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>House of Gucci</h2>
-                        <p>Description here</p>
+                        <p>Director: Ridley Scott</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -211,7 +263,7 @@
                     <div class = img1><img src="/static/encanto.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Encanto</h2>
-                        <p>Description here</p>
+                        <p>Director: Byron Howard</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -222,7 +274,7 @@
                     <div class = img1><img src="/static/venom.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Venom</h2>
-                        <p>Description here</p>
+                        <p>Director: Andy Serkis</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -233,7 +285,7 @@
                     <div class = img1><img src="/static/007.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>No Time to Die</h2>
-                        <p>Description here</p>
+                        <p>Director: Cary Fukunaga</p>
                         <button>Rate now</button>
                     </div>
                 </div>
@@ -244,8 +296,17 @@
                     <div class = img1><img src="/static/free_guy.jpeg" alt=""></div>
                     <div class="main-text">
                         <h2>Free Guy</h2>
-                        <p>Description here</p>
-                        <button>Rate now</button>
+                        <p>Director: Shawn Levy</p>
+                        <div class="center">
+                            <a href="#popup"><button>Rate now</button></a>
+                          </div>
+                          <div id="popup">
+                            <div class="popup-content">
+                              <h1 style="color:#eee; font-size:x-large">Free Guy</h1>
+                              <p style="color:#eee">Ryan Reynolds plays Guy, an NPC in an open-world video game who works at a bank and has been sentenced to living the same daily routine. A chance encounter with a mysterious woman gives him gives him an epiphany, and inspires Guy to become the hero of his own life story.</p>
+                              <a style=color:#eee href="#" class="close-popup">×</a>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>
