@@ -7,7 +7,7 @@ import psycopg2
 
 app = Flask(__name__)
 
-con = psycopg2.connect(database="rateup", user="postgres", password="", host="127.0.0.1", port="5432")
+con = psycopg2.connect(database="rateup", user="postgres", password="papalina", host="127.0.0.1", port="5432")
 print("Database opened successfully")
 
 
@@ -15,7 +15,7 @@ templates = FileSystemLoader('templates')
 environment = Environment(loader = templates)
 
 
-@app.route("/", methods = ["GET", "POST"])
+@app.route("/signUp", methods = ["GET", "POST"])
 def signUp():
     username = request.args.get("name")
     email = request.args.get("email")
