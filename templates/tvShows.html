@@ -186,6 +186,48 @@
 
 
 
+              *{
+                margin: 0;
+                padding: 0;
+            }
+            .rate {
+                float: left;
+                height: 46px;
+                padding: 0 10px;
+            }
+            .rate:not(:checked) > input {
+                position:absolute;
+                top:-9999px;
+            }
+            .rate:not(:checked) > label {
+                float:right;
+                width:1em;
+                overflow:hidden;
+                white-space:nowrap;
+                cursor:pointer;
+                font-size:30px;
+                color:#ccc;
+            }
+            .rate:not(:checked) > label:before {
+                content: '★ ';
+            }
+            .rate > input:checked ~ label {
+                color: #000000;    
+            }
+            .rate:not(:checked) > label:hover,
+            .rate:not(:checked) > label:hover ~ label {
+                color: #000000;  
+            }
+            .rate > input:checked + label:hover,
+            .rate > input:checked + label:hover ~ label,
+            .rate > input:checked ~ label:hover,
+            .rate > input:checked ~ label:hover ~ label,
+            .rate > label:hover ~ input:checked ~ label {
+                color: #000000;
+            }
+
+
+
         </style>
     </head>
     <body>
@@ -294,6 +336,18 @@
                               <h1 style="color:#eee; font-size:x-large">Euphoria</h1>
                               <p style="color:#eee">Euphoria is an American teen drama television series created and written by Sam Levinson for HBO. It is based on the Israeli television miniseries of the same name created by Ron Leshem and Daphna Levin. It follows a group of high school students through their experiences of sex, drugs, friendships, love, identity, and trauma.</p>
                               <a style=color:#eee href="#" class="close-popup">×</a>
+                              <div class="rate">
+                                <input type="radio" id="star5" name="rate" value="5" />
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" id="star4" name="rate" value="4" />
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" name="rate" value="3" />
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" name="rate" value="2" />
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" name="rate" value="1" />
+                                <label for="star1" title="text">1 star</label>
+                              </div>
                             </div>
                           </div>
                     </div>
