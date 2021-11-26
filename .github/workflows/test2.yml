@@ -15,15 +15,15 @@ jobs:
         image: postgres
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: admin
-          POSTGRES_DB: mydb
+          POSTGRES_PASSWORD: papalina
+          POSTGRES_DB: rateup
         ports:
           - 5432:5432
           
     env:
       POSTGRES_HOST: localhost
       POSTGRES_PORT: 5432
-      POSTGRES_PASSWORD: admin
+      POSTGRES_PASSWORD: papalina
       POSTGRES_USER: postgres
 
     steps:
