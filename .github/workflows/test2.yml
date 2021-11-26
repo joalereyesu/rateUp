@@ -8,14 +8,6 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    
-    services:
-      postgres:
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: papalina
-        ports:
-          - "5432:5432"
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
