@@ -165,6 +165,28 @@
                 margin: 0 0 20px;
                 color: #edf0f1;
             }
+
+            .email{
+                font-family: "Roboto";
+                color: #edf0f1;
+                margin-right: 265px;
+            }
+
+            .password{
+                font-family: "Roboto";
+                color: #edf0f1;
+                margin-right: 240px; 
+            }
+
+            .boton1{
+                margin-top: 30px;
+            }
+
+            .boton2{
+                background-color: darkred;
+            }
+            
+
             input[type=text], input[type=password] {
                 width: 100%;
                 padding: 15px;
@@ -180,6 +202,7 @@
                 background-color: #ddd;
                 outline: none;
             }
+
         </style>
     </head>
 
@@ -203,15 +226,16 @@
                         <h1 class="sub">Edit your profile</h1>
                         <hr>
                         <form>
-                            <label for = "username">Username</label>
+                            <label class="password" for = "username">Username</label>
                             <input type = "text" placeholder="New username" name = "username" required>
 
-                            <label for = "email">Email</label>
-                            <input type = "text" placeholder="New email" name = "email" required>
+                            <label class="email" for = "email">Email</label>
+                            <input  type = "text" placeholder="New email" name = "email" required>
 
-                            <label for = "password">Password</label>
+                            <label class="password" for = "password">Password</label>
                             <input type = "password" placeholder="New password" name = "password" required>
-                            <button>Update profile</button>
+                            <button class="boton1">Update profile</button>
+                            <button class="boton2">Delete Account</button>
                         </form>
                     </div>
                 </div>
