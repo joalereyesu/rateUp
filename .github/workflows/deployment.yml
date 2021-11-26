@@ -47,9 +47,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     # Run our unit tests
-    steps:
-    - uses: actions/checkout@v2
-        
+    steps:  
     - name: Run Unit Tests
       run: | 
-           python test_post.py
+           python */test_post.py
