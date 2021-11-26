@@ -50,4 +50,4 @@ jobs:
     steps:  
     - name: Run Unit Tests
       run: | 
-           python */test_post.py
+           python rateUp/test_application.py
